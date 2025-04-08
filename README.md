@@ -1,12 +1,10 @@
-# HTML-SERSD-Cyber-Class
-HTML Websites
+#SERSD-Cyber-Class
+Programming
 
 
 This repository is for Cyber shop
-includes some html tailwind css websites
 
 Made by No one.
-
 
 Key/Legend:
 
