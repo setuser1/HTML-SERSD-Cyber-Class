@@ -1,7 +1,7 @@
 import os
 import time
 import random
-from keyboard  # Import from your keystroke module
+import keyboard  # Import from your keystroke module
 
 # Function to clear the terminal
 def clear_screen():
