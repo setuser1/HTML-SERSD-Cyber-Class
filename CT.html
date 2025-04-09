@@ -1,8 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang ="en">
 <head>
 	<title>C-Tran HTML Project</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<style>
+    #home-button {
+        position: fixed;
+        bottom: 10px;
+        left: 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
     body {
         text-align: center;
         font-family: Arial, sans-serif;
@@ -95,6 +108,7 @@
 	</style>
 </head>
 <body>
+    <button id="home-button" onclick="window.location='#top'">Top</button>
     <nav>
         <a href="#morning-meeting">Morning Meeting</a>
         <a href="#crash-course">Crash Course</a>
@@ -143,8 +157,8 @@
             <a class="button" href="https://www.python.org/downloads/">Python</a>
         </div>
 		<div class="header-link-container">
-            <h3>Html:</h3>
-            <a class="button" href="https://www.w3schools.com/html/">Html</a>
+            <h3>HTML:</h3>
+            <a class="button" href="https://www.w3schools.com/html/">HTML</a>
         </div>
         <div class="header-link-container">
             <h3>Hexadecimal:</h3>
@@ -167,8 +181,8 @@
         <p>There are many network types that connect many devices. Some of the<br>most common ones are Local Area Networks, Wide Area Networks,<br>Personal Area Networks, and Wireless Local Area Networks.</p>
         <h2 id="python">Python</h2>
         <p>Python is a high-level programming language that<br>can be used to make programs and applications.</p>
-        <h2 id="html">Html</h2>
-		<p>Html,also known as Hyper Text Markup Langauge,<br>is a programming language used to create and<br>design websites. This was also made using HTML.</p>
+        <h2 id="html">HTML</h2>
+		<p>HTML, also known as Hyper Text Markup Langauge,<br>is a programming language used to create and<br>design websites. This was also made using HTML.</p>
 		<h2 id="hexadecimal">Hexadecimal</h2>
         <p>Hexadecimal is a base 16 number system. It is mainly used in<br>IPv6 addresses and MAC addresses. It is more efficient than binary,<br>a base 2 number system, and may not run out of values for a long time.</p>
 
@@ -184,6 +198,11 @@
         <button type="submit" style="padding: 10px 20px; margin-top: 10px; border: none; border-radius: 5px; background-color: #4d4d4d; color: #ffffff; cursor: pointer;">Submit</button>
     </form>
 </div>
+<script>
+        document.getElementById("home-button").addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+</script>
 <script>
     // Add an event listener to the form
     document.getElementById('feedback-form').addEventListener('submit', function(event) {
@@ -207,7 +226,7 @@
         }
     });
 </script>
-<button id="toggle-theme" style="position: fixed; bottom: 10px; right: 10px; padding: 10px 15px; background-color: #4d4d4d; color: #ffffff; border: none; border-radius: 5px; cursor: pointer;">Switch to Light Mode</button>
+<button id="toggle-theme" style="position: fixed; bottom: 10px; right: 10px; padding: 10px 15px; background-color: #4d4d4d; color: #ffffff; border: none; border-radius: 5px; cursor: pointer;">Light Mode</button>
 <script>
     // JavaScript to handle the theme toggle
     const toggleButton = document.getElementById('toggle-theme');
@@ -239,7 +258,7 @@ toggleButton.addEventListener('click', () => {
 
         document.getElementById('feedback-list').style.color = '#000000';
 
-        toggleButton.textContent = 'Switch to Dark Mode';
+        toggleButton.textContent = 'Dark Mode';
     } else {
         // Switch back to dark mode
         document.body.style.background = 'linear-gradient(to bottom right, #2a2a2a, #3c3c3c)';
@@ -261,7 +280,7 @@ toggleButton.addEventListener('click', () => {
 
         document.getElementById('feedback-list').style.color = '#e0e0e0';
 
-        toggleButton.textContent = 'Switch to Light Mode';
+        toggleButton.textContent = 'Light Mode';
     }
 
     isDarkMode = !isDarkMode;
