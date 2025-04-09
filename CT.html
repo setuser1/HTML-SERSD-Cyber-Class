@@ -216,68 +216,57 @@
     let isDarkMode = true;
 
     // Toggle function
-    toggleButton.addEventListener('click', () => {
-        if (isDarkMode) {
-            // Switch to light mode
-            document.body.style.background = 'linear-gradient(to bottom right, #f0f0f0, #e0e0e0)';
-            document.body.style.color = '#000000'; // Change main text color to black
-            toggleButton.style.backgroundColor = '#000000'; // Black toggle button background
-            toggleButton.style.color = '#ffffff'; // White text for toggle button
+toggleButton.addEventListener('click', () => {
+    if (isDarkMode) {
+        // Switch to light mode
+        document.body.style.background = 'linear-gradient(to bottom right, #f0f0f0, #e0e0e0)';
+        document.body.style.color = '#000000';
 
-            // Change headers and paragraphs to black
-            const headers = document.querySelectorAll('h2');
-            headers.forEach(header => {
-                header.style.color = '#000000'; // Change headers to black
-            });
-            const paragraphs = document.querySelectorAll('p');
-            paragraphs.forEach(paragraph => {
-                paragraph.style.color = '#000000'; // Change paragraphs to black
-            });
+        // Make <h1> more visually appealing in light mode
+        const h1 = document.querySelector('h1');
+        h1.style.color = '#333333'; // Softer dark gray instead of black
+        h1.style.textShadow = '1px 1px 2px rgba(0, 0, 0, 0.2)'; // Subtle shadow for depth
+        h1.style.fontWeight = '600'; // Slightly lighter font weight for elegance
 
-            // Update feedback box colors
-            const feedbackDisplay = document.getElementById('feedback-display');
-            feedbackDisplay.style.backgroundColor = '#ffffff'; // Light background for feedback box
-            feedbackDisplay.style.color = '#000000'; // Black text color
-            
-            const feedbackList = document.getElementById('feedback-list');
-            feedbackList.style.color = '#000000'; // Black feedback list text
+        // Adjust other elements
+        document.querySelectorAll('h2').forEach(header => {
+            header.style.color = '#000000';
+        });
 
-            // Update button text
-            toggleButton.textContent = 'Switch to Dark Mode';
-        } else {
-            // Switch back to dark mode
-            document.body.style.background = 'linear-gradient(to bottom right, #2a2a2a, #3c3c3c)';
-            document.body.style.color = '#e0e0e0'; // Light gray text color
-            toggleButton.style.backgroundColor = '#4d4d4d'; // Dark toggle button background
-            toggleButton.style.color = '#ffffff'; // White text for toggle button
+        document.querySelectorAll('p').forEach(paragraph => {
+            paragraph.style.color = '#000000';
+        });
 
-            // Change headers and paragraphs to light gray
-            const headers = document.querySelectorAll('h2');
-            headers.forEach(header => {
-                header.style.color = '#e0e0e0'; // Change headers to light gray
-            });
-            const paragraphs = document.querySelectorAll('p');
-            paragraphs.forEach(paragraph => {
-                paragraph.style.color = '#e0e0e0'; // Change paragraphs to light gray
-            });
+        document.getElementById('feedback-list').style.color = '#000000';
 
-            // Update feedback box colors
-            const feedbackDisplay = document.getElementById('feedback-display');
-            feedbackDisplay.style.backgroundColor = '#3c3c3c'; // Dark background for feedback box
-            feedbackDisplay.style.color = '#e0e0e0'; // Light gray text color
-            
-            const feedbackList = document.getElementById('feedback-list');
-            feedbackList.style.color = '#e0e0e0'; // Light gray feedback list text
+        toggleButton.textContent = 'Switch to Dark Mode';
+    } else {
+        // Switch back to dark mode
+        document.body.style.background = 'linear-gradient(to bottom right, #2a2a2a, #3c3c3c)';
+        document.body.style.color = '#e0e0e0';
 
-            // Update button text
-            toggleButton.textContent = 'Switch to Light Mode';
-        }
+        // Restore <h1> styling in dark mode
+        const h1 = document.querySelector('h1');
+        h1.style.color = '#ffffff';
+        h1.style.textShadow = '2px 2px #1a1a1a'; // Restore original shadow
+        h1.style.fontWeight = '700'; // Restore boldness
 
-        // Toggle the mode state
-        isDarkMode = !isDarkMode;
-    });
+        document.querySelectorAll('h2').forEach(header => {
+            header.style.color = '#e0e0e0';
+        });
+
+        document.querySelectorAll('p').forEach(paragraph => {
+            paragraph.style.color = '#e0e0e0';
+        });
+
+        document.getElementById('feedback-list').style.color = '#e0e0e0';
+
+        toggleButton.textContent = 'Switch to Light Mode';
+    }
+
+    isDarkMode = !isDarkMode;
+});
 </script>
 	</main>
 </body>
 </html>
-
