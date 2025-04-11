@@ -1,14 +1,9 @@
-# HTML-SERSD-Cyber-Class
-HTML Websites
+#SERSD-Cyber-Class
 
+Programming
 
-This repository is for Cyber shop
-includes some html tailwind css websites
+This repository is for Cyber shop.
 
-Made by No one.
-
-
-Key/Legend:
-
-homepage.html - setuser1
-Geeked.html - FixqR
+Key/ Legend
+setuer1 is root and king of all land.
+the folklore of setuser1 shall haunt all those about.
